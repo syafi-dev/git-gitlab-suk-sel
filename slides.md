@@ -134,6 +134,10 @@ src: ./pages/pitfalls-branches.md
 ---
 
 ---
+src: ./pages/lunch-break.md
+---
+
+---
 src: ./pages/part3.md
 ---
 

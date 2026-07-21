@@ -9,7 +9,7 @@ preview-pane screenshots).
 ## Build & structure
 
 - [x] `pnpm install` succeeds; `pnpm build` exits 0 (671 modules). — 2026-07-21
-- [x] `slides.md` imports 48 pages via `src:`; every page file exists. — 2026-07-21
+- [x] `slides.md` imports 49 pages via `src:`; every page file exists. — 2026-07-21
 - [x] Build base is `/git-gitlab-suk-sel/`; all `dist/assets/*` reference that base. — 2026-07-21
 
 ## Rendering — both color schemes
