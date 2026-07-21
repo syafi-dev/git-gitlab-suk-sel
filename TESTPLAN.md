@@ -87,5 +87,8 @@ preview-pane screenshots).
       (pair-03) for the conflict lab, pairs+MR for 6-7. Lab 5 steps rewritten to
       make + resolve the conflict on the shared branch. All 5-step labs still
       clear the footer in both schemes with the added SETUP line. — 2026-07-21
+- [x] TermWindow copy button: header "copy" button copies the terminal body to
+      the clipboard, stripping the leading "$ " prompt (verified clean output +
+      click feedback; write needs a focused tab, works live). — 2026-07-21
 - [x] Source URLs preserved: ml.my/git-gitlab-slide, pre/post questionnaires,
       git.selangor.gov.my practice repo. — 2026-07-21
