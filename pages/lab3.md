@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="3" title="Feature branch → commit → merge" goal="Do a full branch cycle: split off, work, and merge back cleanly." caution="Nobody else touched your lines, so Git just moves the pointer forward — a clean fast-forward merge.">
+<Lab :n="3" title="Feature branch → commit → merge" prep="Your Lab 1 clone · solo · your own branch feature/&lt;name&gt;" goal="Do a full branch cycle: split off, work, and merge back cleanly." caution="Nobody else touched your lines, so Git just moves the pointer forward — a clean fast-forward merge.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>From main, run <code>git pull</code> to be current.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Create a branch: <code>git switch -c feature/your-name</code>.</span></li>

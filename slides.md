@@ -38,6 +38,10 @@ src: ./pages/setup-check.md
 ---
 
 ---
+src: ./pages/lab-setup.md
+---
+
+---
 src: ./pages/part1.md
 ---
 

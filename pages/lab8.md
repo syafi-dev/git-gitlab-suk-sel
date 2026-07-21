@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="8" title="Recovery drills" goal="Practise the undos on purpose, so they're reflexes when it counts." caution="No pressure. Nothing here touches shared branches, so break things freely and bring them back.">
+<Lab :n="8" title="Recovery drills" prep="Your clone · solo · all local — safe to break freely" goal="Practise the undos on purpose, so they're reflexes when it counts." caution="No pressure. Nothing here touches shared branches, so break things freely and bring them back.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Make a bad edit, then <code>git restore</code> it away.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Stage a file, then <code>git restore --staged</code> it.</span></li>

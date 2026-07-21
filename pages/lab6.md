@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="6" title="Push a branch & open a Merge Request" goal="Take a change all the way through the GitLab MR flow with a reviewer." caution="Swap: be the author on one MR and the reviewer on a partner's. Leave at least one real comment.">
+<Lab :n="6" title="Push a branch & open a Merge Request" prep="Your clone · your feature branch → MR into main · a partner reviews" goal="Take a change all the way through the GitLab MR flow with a reviewer." caution="Swap: be the author on one MR and the reviewer on a partner's. Leave at least one real comment.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Create <code>feature/mr-yourname</code> and make a small edit.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Push it: <code>git push -u origin feature/mr-yourname</code>.</span></li>

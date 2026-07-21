@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="7" title="Author & reviewer roleplay" goal="Run one real review cycle end-to-end: raise an MR, exchange comments, merge cleanly." caution="Keep comments kind and specific — you're improving the change, not the person.">
+<Lab :n="7" title="Author & reviewer roleplay" prep="In pairs · one MR each way · you review each other's" goal="Run one real review cycle end-to-end: raise an MR, exchange comments, merge cleanly." caution="Keep comments kind and specific — you're improving the change, not the person.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Author: branch, commit a small change, push, open an MR.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Reviewer: read the diff and leave one specific comment.</span></li>

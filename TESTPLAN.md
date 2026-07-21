@@ -9,7 +9,7 @@ preview-pane screenshots).
 ## Build & structure
 
 - [x] `pnpm install` succeeds; `pnpm build` exits 0 (671 modules). — 2026-07-21
-- [x] `slides.md` imports 49 pages via `src:`; every page file exists. — 2026-07-21
+- [x] `slides.md` imports 50 pages via `src:`; every page file exists. — 2026-07-21
 - [x] Build base is `/git-gitlab-suk-sel/`; all `dist/assets/*` reference that base. — 2026-07-21
 
 ## Rendering — both color schemes
@@ -80,5 +80,12 @@ preview-pane screenshots).
       and gitlab-issues-ci (Issue #42 mock + pipeline build→test→deploy). — 2026-07-21
 - [x] Activity marker: `ActivityBadge` ("your turn", green) on all 8 labs (via
       Lab.vue) and the warm-up — distinct from the red `LiveBadge`. — 2026-07-21
+- [x] Lab environment: `lab-setup` slide states the shared repo
+      (training/practice, everyone a Developer), solo vs pair, and that labs
+      build on the Lab 1 clone. Every lab has a `prep` (SETUP) line naming its
+      prerequisites: solo/own-branch for 1-4 & 8, pairs on a shared branch
+      (pair-03) for the conflict lab, pairs+MR for 6-7. Lab 5 steps rewritten to
+      make + resolve the conflict on the shared branch. All 5-step labs still
+      clear the footer in both schemes with the added SETUP line. — 2026-07-21
 - [x] Source URLs preserved: ml.my/git-gitlab-slide, pre/post questionnaires,
       git.selangor.gov.my practice repo. — 2026-07-21

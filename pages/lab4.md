@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="4" title="Two features at once" goal="Run two parallel tasks on separate branches without mixing changes, then tidy up." caution="Name each branch for its job. Short-lived branches keep merges painless.">
+<Lab :n="4" title="Two features at once" prep="Your clone · solo · two of your own branches, merged locally" goal="Run two parallel tasks on separate branches without mixing changes, then tidy up." caution="Name each branch for its job. Short-lived branches keep merges painless.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>From an updated main, create <code>feature/header</code> and commit.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Switch to main, create <code>feature/footer</code>, and commit.</span></li>

@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="1" title="Clone → change → commit → push" goal="Run one full loop against the GitLab Selangor training repo." caution="Do it your way — terminal, VS Code, or Sourcetree. If push is rejected, run git pull first, then push again.">
+<Lab :n="1" title="Clone → change → commit → push" prep="Shared training repo — you're a Developer · solo · fresh clone" goal="Run one full loop against the GitLab Selangor training repo." caution="Do it your way — terminal, VS Code, or Sourcetree. If push is rejected, run git pull first, then push again.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Clone the training repo from GitLab Selangor.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Open <code>README.md</code> and add your details (name, unit, role).</span></li>

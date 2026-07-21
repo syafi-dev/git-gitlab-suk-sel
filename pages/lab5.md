@@ -3,22 +3,24 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="5" title="Create & resolve a merge conflict" goal="Deliberately cause a conflict, then fix it, so it becomes routine, not scary." caution="Do this twice and swap roles. The goal is that conflicts stop feeling like emergencies.">
+<Lab :n="5" title="Create & resolve a merge conflict" prep="In pairs · both push to one shared branch (e.g. pair-03) in the training repo" goal="Deliberately cause a conflict, then fix it, so it becomes routine, not scary." caution="Do this twice and swap roles. The goal is that conflicts stop feeling like emergencies.">
 
-<li v-click="1" class="step-row"><span class="step-num">1</span><span>In pairs: both edit the <b>same line</b> of <code>conflict.txt</code>.</span></li>
-<li v-click="2" class="step-row"><span class="step-num">2</span><span>Partner A commits &amp; pushes first.</span></li>
-<li v-click="3" class="step-row"><span class="step-num">3</span><span>Partner B commits, then tries to push (rejected).</span></li>
-<li v-click="4" class="step-row"><span class="step-num">4</span><span>Partner B runs <code>git pull</code>, and the conflict appears.</span></li>
-<li v-click="5" class="step-row"><span class="step-num">5</span><span>Edit the file, remove markers, add, commit, push.</span></li>
+<li v-click="1" class="step-row"><span class="step-num">1</span><span>Pick a pair number. <b>A</b> makes the shared branch and pushes it.</span></li>
+<li v-click="2" class="step-row"><span class="step-num">2</span><span><b>B</b> pulls, then switches onto <code>pair-03</code>. Now both are on it.</span></li>
+<li v-click="3" class="step-row"><span class="step-num">3</span><span>Both edit the <b>same line</b> of <code>conflict.txt</code>. A commits &amp; pushes first.</span></li>
+<li v-click="4" class="step-row"><span class="step-num">4</span><span>B commits, pushes (rejected), runs <code>git pull</code> — conflict appears.</span></li>
+<li v-click="5" class="step-row"><span class="step-num">5</span><span>B edits the file, removes markers, add, commit, push.</span></li>
 
 <template #terminal>
-<TermWindow title="your turn — Partner B">
-<div v-click="4" class="opacity-50"># after the rejected push:</div>
-<div v-click="4"><span class="text-green-400">$</span> git pull</div>
-<div v-click="4" class="text-amber-300"># CONFLICT in conflict.txt</div>
-<div v-click="5" class="opacity-50"># ...edit, remove &lt;&lt;&lt; === &gt;&gt;&gt;...</div>
-<div v-click="5"><span class="text-green-400">$</span> git add conflict.txt</div>
-<div v-click="5"><span class="text-green-400">$</span> git commit -m "Resolve conflict"</div>
+<TermWindow title="your turn — pair-03">
+<div v-click="1" class="opacity-50"># Partner A — make the shared branch</div>
+<div v-click="1"><span class="text-green-400">$</span> git switch -c pair-03</div>
+<div v-click="1"><span class="text-green-400">$</span> git push -u origin pair-03</div>
+<div v-click="2" class="opacity-50"># Partner B</div>
+<div v-click="2"><span class="text-green-400">$</span> git pull &amp;&amp; git switch pair-03</div>
+<div v-click="4" class="opacity-50"># B, after the rejected push:</div>
+<div v-click="4"><span class="text-green-400">$</span> git pull <span class="text-amber-300"># CONFLICT</span></div>
+<div v-click="5"><span class="text-green-400">$</span> git add conflict.txt &amp;&amp; git commit</div>
 <div v-click="5"><span class="text-green-400">$</span> git push</div>
 </TermWindow>
 </template>

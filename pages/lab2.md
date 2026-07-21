@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="2" title="Staging & undo drills" goal="Choose exactly what to commit, and fix mistakes before they leave your machine." caution="Everything here is local and unpushed, so experiment freely. Nothing can affect teammates yet.">
+<Lab :n="2" title="Staging & undo drills" prep="Your Lab 1 clone · solo · all local — nothing is pushed" goal="Choose exactly what to commit, and fix mistakes before they leave your machine." caution="Everything here is local and unpushed, so experiment freely. Nothing can affect teammates yet.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Edit two files. Stage only one with <code>git add &lt;file&gt;</code>, then <code>git status</code>.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Run <code>git add -p</code> on the other and stage just one chunk.</span></li>
