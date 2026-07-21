@@ -1,0 +1,227 @@
+/* Deck-wide styles for the SUK Selangor "Git & GitLab" workshop deck.
+   Slide markup stays lean; reveal behaviours and the deck's shared visual
+   grammar (links, eyebrows, note gutters, medallions) live here.
+   Visual system adapted from a shared Slidev training-deck design system. */
+
+/* ---- links: every visible URL is a styled, clickable anchor (deck rule) ---- */
+.slidev-layout a {
+  color: #b91c1c; /* red-700: enough contrast on white (session banner is red) */
+  font-weight: 600;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.slidev-layout a:hover {
+  border-bottom-color: currentColor;
+}
+html.dark .slidev-layout a {
+  color: #f87171; /* red-400 on dark */
+}
+
+/* ---- part-chip eyebrow above segment-opener titles ---- */
+.eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.3rem;
+}
+
+/* ---- hanging icon gutter (notes beside diagrams/terminals; no boxes) ---- */
+.note-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.note-row p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.87;
+}
+.note-ico {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* ---- click-reveal grammar: default rise-in, plus scoped variants ---- */
+.slidev-vclick-target {
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+}
+/* medallion / act pop: scale up with a soft overshoot */
+.pop .slidev-vclick-target {
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.pop .slidev-vclick-hidden {
+  transform: scale(0.55);
+}
+/* split-screen rows enter from their own side */
+.from-left .slidev-vclick-hidden {
+  transform: translateX(-26px);
+}
+.from-right .slidev-vclick-hidden {
+  transform: translateX(26px);
+}
+/* terminal rows: quick fade, no travel (terminals print, they don't glide) */
+.term-print .slidev-vclick-target {
+  transition: opacity 0.18s ease;
+}
+.term-print .slidev-vclick-hidden {
+  transform: none;
+}
+/* elements that carry a v-mark: fade only. A transform on the revealing
+   element turns it into a containing block mid-transition, and the rough
+   annotation measures at that exact moment — the underline lands at the
+   top of the slide. */
+.mark-safe.slidev-vclick-hidden,
+.mark-safe .slidev-vclick-hidden {
+  transform: none;
+}
+
+/* ---- type-in: mono line "types" itself when its v-click fires ---- */
+.type-line {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  max-width: 34ch;
+  transition: max-width 0.9s steps(26, end);
+}
+.slidev-vclick-hidden .type-line {
+  max-width: 0;
+}
+
+/* ---- type-mount: mono line types itself on slide mount, no v-click needed.
+       Animates max-width between two fixed values (0 and 34ch), same technique
+       as .type-line above; CSS cannot tween width to/from "auto" so that always
+       snaps instantly instead of stepping. ::after is a solid block cursor sized
+       like a real terminal cell, not a hairline caret, so it reads at a glance
+       even on the dim mono footer. ---- */
+@keyframes type-mount-reveal {
+  to { max-width: 34ch; }
+}
+.type-mount {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.type-mount .type-mount-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  max-width: 0;
+  animation: type-mount-reveal 0.9s steps(26, end) forwards;
+}
+.type-mount::after {
+  content: '';
+  display: inline-block;
+  width: 0.62em;
+  height: 1.3em;
+  margin-left: 0.15em;
+  vertical-align: -0.28em;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: caret-blink 0.9s step-end infinite;
+}
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+/* ---- check stamp: stroke draws itself when its v-click fires ---- */
+.check-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.7s ease 0.15s;
+}
+.slidev-vclick-hidden .check-path {
+  stroke-dashoffset: 48;
+}
+
+/* ---- icon medallion (tinted disc, icon inside, caption below) ---- */
+.medallion {
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* ---- pop-in on mount: for content swapped in by v-switch (v-click can't
+       animate there because the element mounts already revealed) ---- */
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.55); }
+}
+.pop-in {
+  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* ---- ghost numerals for the session map ---- */
+.ghost-num {
+  position: absolute;
+  top: -2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6.5rem;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.07;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slidev-vclick-target,
+  .type-line,
+  .check-path {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==== workshop additions (labs, pitfalls, part openers) ============ */
+/* This deck is a hands-on 1-day workshop, not a watch-only webinar, so
+   it adds two archetypes the taster decks don't need: a Lab (steps + a
+   "your turn" terminal) and a Pitfall grid (do-this / not-that). */
+
+/* ---- numbered lab / recap step, boxless: a ghosted numeral + text ---- */
+.step-row { display: flex; align-items: flex-start; gap: 0.9rem; }
+.step-num {
+  flex-shrink: 0;
+  width: 1.7rem; height: 1.7rem;
+  border-radius: 9999px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; font-weight: 800; font-family: var(--slidev-code-font-family, monospace);
+  color: #dc2626; background: rgb(220 38 38 / 0.1);
+}
+html.dark .step-num { color: #f87171; background: rgb(248 113 113 / 0.12); }
+
+/* ---- lab goal chip ---- */
+.goal-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 600; opacity: 0.85;
+}
+
+/* ---- pitfall rows: a muted "not this" with its "do this" beneath ---- */
+.pf-cross { color: #dc2626; }
+html.dark .pf-cross { color: #f87171; }
+.pf-check { color: #16a34a; }
+html.dark .pf-check { color: #4ade80; }
+
+/* ---- caution / heads-up strip under a lab ---- */
+.caution {
+  font-size: 0.85rem; line-height: 1.5;
+  color: #b45309;
+}
+html.dark .caution { color: #fbbf24; }
+
+/* ---- big part-opener numeral ---- */
+.part-numeral {
+  font-size: 12rem; font-weight: 800; line-height: 0.9;
+  opacity: 0.08; font-family: var(--slidev-code-font-family, monospace);
+}
