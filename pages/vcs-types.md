@@ -21,13 +21,13 @@ transition: slide-left
       <circle cx="130" cy="40" r="24" fill="#2563eb22" stroke="currentColor" stroke-width="2"/>
       <DiagIcon name="server" :x="130" :y="40" :size="22"/>
     </g>
-    <text x="130" y="80" text-anchor="middle" style="font-size:8.5px" fill="#64748b" font-weight="700">the only full history</text>
+    <text x="130" y="82" text-anchor="middle" class="vlbl" style="font-size:8.5px" fill="#64748b" font-weight="700">the only full history</text>
     <g style="color:#0891b2">
       <circle cx="45" cy="150" r="17" fill="#06b6d422" stroke="currentColor" stroke-width="1.6"/><DiagIcon name="laptop" :x="45" :y="150" :size="16"/>
       <circle cx="130" cy="150" r="17" fill="#06b6d422" stroke="currentColor" stroke-width="1.6"/><DiagIcon name="laptop" :x="130" :y="150" :size="16"/>
       <circle cx="215" cy="150" r="17" fill="#06b6d422" stroke="currentColor" stroke-width="1.6"/><DiagIcon name="laptop" :x="215" :y="150" :size="16"/>
     </g>
-    <text x="130" y="176" text-anchor="middle" style="font-size:8.5px" fill="#64748b">clients hold a checkout only</text>
+    <text x="130" y="176" text-anchor="middle" class="vlbl" style="font-size:8.5px" fill="#64748b">clients hold a checkout only</text>
   </svg>
   <div v-click="1" class="mt-1 text-sm opacity-75 space-y-0.5">
     <p class="m-0">· One server owns the history.</p>
@@ -49,7 +49,7 @@ transition: slide-left
       <circle cx="45" cy="150" r="21" fill="#7c3aed22" stroke="currentColor" stroke-width="2"/><DiagIcon name="laptop" :x="45" :y="150" :size="18"/>
       <circle cx="215" cy="150" r="21" fill="#7c3aed22" stroke="currentColor" stroke-width="2"/><DiagIcon name="laptop" :x="215" :y="150" :size="18"/>
     </g>
-    <text x="130" y="94" text-anchor="middle" style="font-size:8.5px" fill="#16a34a" font-weight="700">every node = full history</text>
+    <text x="130" y="112" text-anchor="middle" class="vlbl" style="font-size:8.5px" fill="#16a34a" font-weight="700">every node = full history</text>
   </svg>
   <div v-click="2" class="mt-1 text-sm opacity-75 space-y-0.5">
     <p class="m-0">· Every clone is a full copy, history and all.</p>
@@ -71,3 +71,16 @@ Git is <span class="text-purple-600 dark:text-purple-400 font-600">distributed</
 [click] this is why Git feels fast and resilient: nothing needs the network for everyday work, and every teammate's laptop is a full backup of the project
 - gloss: centralized is a library where one building holds every book; distributed gives everyone their own full copy of the whole library
 -->
+
+<style>
+/* Halo behind the in-diagram SVG labels so they stay readable where they
+   cross the connector lines. Stroke (drawn under the fill via paint-order)
+   is painted in the slide background colour, per light/dark scheme. */
+text.vlbl {
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+html.dark text.vlbl { stroke: #0b0b0b; }
+</style>
