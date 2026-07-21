@@ -10,7 +10,7 @@ preview-pane screenshots).
 
 - [x] `pnpm install` succeeds; `pnpm build` exits 0 (671 modules). — 2026-07-21
 - [x] `slides.md` imports 40 pages via `src:`; every page file exists. — 2026-07-21
-- [x] Build base is `/suk-selangor/`; all `dist/assets/*` reference that base. — 2026-07-21
+- [x] Build base is `/git-gitlab-suk-sel/`; all `dist/assets/*` reference that base. — 2026-07-21
 
 ## Rendering — both color schemes
 
@@ -49,8 +49,8 @@ preview-pane screenshots).
 
 - [x] GitHub Actions workflow builds and publishes to Pages (no ntw `lint:decks`
       step; single-deck build). — 2026-07-21
-- [x] Live at https://syafi-dev.github.io/suk-selangor/ — HTTP 200, correct
-      `<title>`, assets on `/suk-selangor/` base, logo + icons load. — 2026-07-21
+- [x] Live at https://syafi-dev.github.io/git-gitlab-suk-sel/ — HTTP 200, correct
+      `<title>`, assets on `/git-gitlab-suk-sel/` base, logo + icons load. — 2026-07-21
 
 ## Content fidelity
 

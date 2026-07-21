@@ -3,7 +3,7 @@
 A [Slidev](https://sli.dev) deck for the **SUK Selangor** (Setiausaha Kerajaan
 Negeri Selangor) Git & GitLab 1-day refresher workshop.
 
-**Live:** https://syafi-dev.github.io/suk-selangor/
+**Live:** https://syafi-dev.github.io/git-gitlab-suk-sel/
 
 Facilitator: **Syafiyullah Yahya** — MBOT Professional Technologist · HRD Corp
 Accredited Trainer.
@@ -30,7 +30,7 @@ feedback links.
 ```bash
 pnpm install
 pnpm dev            # http://localhost:3030, live reload
-pnpm build          # static site → dist/ (base /suk-selangor/)
+pnpm build          # static site → dist/ (base /git-gitlab-suk-sel/)
 pnpm export         # PNG/PDF via Playwright (faithful final-click frames)
 ```
 

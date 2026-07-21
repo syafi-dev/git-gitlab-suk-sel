@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "scripts": {
-    "build": "slidev build --base /suk-selangor/",
+    "build": "slidev build --base /git-gitlab-suk-sel/",
     "dev": "slidev --open",
     "export": "slidev export"
   },
