@@ -11,8 +11,8 @@ transition: slide-left
 
 <div class="space-y-4">
   <div v-click="1" class="note-row items-start"><mdi-account class="note-ico text-cyan-600 dark:text-cyan-400" /><p><b>Aisyah</b> edits line 10 of <code>app.js</code>, commits &amp; pushes first.</p></div>
-  <div v-click="2" class="note-row items-start"><mdi-account class="note-ico text-purple-600 dark:text-purple-400" /><p><b>Bala</b> edits the same line 10, tries to push after.</p></div>
-  <div v-click="3" class="note-row items-start"><mdi-alert class="note-ico text-amber-600 dark:text-amber-400" /><p>Bala's push is rejected. He runs <code>git pull</code>, and Git flags the clash for him to decide.</p></div>
+  <div v-click="2" class="note-row items-start"><mdi-account class="note-ico text-purple-600 dark:text-purple-400" /><p><b>Ali</b> edits the same line 10, tries to push after.</p></div>
+  <div v-click="3" class="note-row items-start"><mdi-alert class="note-ico text-amber-600 dark:text-amber-400" /><p>Ali's push is rejected. They run <code>git pull</code>, and Git flags the clash for them to decide.</p></div>
 </div>
 
 <div v-click="4" class="term-print">
@@ -21,7 +21,7 @@ transition: slide-left
 <div>const title = "Login";</div>
 <div class="text-gray-500">=======</div>
 <div>const title = "Sign In";</div>
-<div class="text-red-400">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/bala</div>
+<div class="text-red-400">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/ali</div>
 </TermWindow>
 </div>
 
@@ -34,8 +34,8 @@ transition: slide-left
 <!--
 - a conflict only happens when two branches touch the exact same line; Git will not guess who is right, so it asks
 [click] Aisyah changes line 10 and pushes first; hers is now on the server
-[click] Bala changed the same line; when he pushes, the server says no, you are behind
-[click] he pulls, and Git marks the clash inside the file instead of losing anyone's work
+[click] Ali changed the same line; when they push, the server says no, you are behind
+[click] they pull, and Git marks the clash inside the file instead of losing anyone's work
 [click] the markers are instructions: everything between HEAD and ======= is your version, below it is theirs; your job is to make the file read the way it should, then delete all three marker lines
 - reassure: this is routine teamwork, not damage; every developer sees these weekly
 -->

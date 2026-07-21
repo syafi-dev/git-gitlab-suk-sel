@@ -13,10 +13,10 @@ transition: slide-left
 
 <template #terminal>
 <TermWindow title="your turn">
-<div v-click="1"><span class="text-green-400">$</span> git switch -c feature/mr-bala</div>
+<div v-click="1"><span class="text-green-400">$</span> git switch -c feature/mr-ali</div>
 <div v-click="1" class="opacity-50"># ...edit a file...</div>
 <div v-click="1"><span class="text-green-400">$</span> git add . &amp;&amp; git commit -m "Tweak"</div>
-<div v-click="2"><span class="text-green-400">$</span> git push -u origin feature/mr-bala</div>
+<div v-click="2"><span class="text-green-400">$</span> git push -u origin feature/mr-ali</div>
 <div v-click="3" class="opacity-50"># GitLab prints an MR link —</div>
 <div v-click="3" class="opacity-50"># open it in your browser</div>
 </TermWindow>
