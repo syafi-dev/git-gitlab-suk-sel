@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Git & GitLab Cheat Sheet</title>
+<style>
+  @page { size: A4 landscape; margin: 9mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root{
+    --ink:#1c2430; --muted:#5b6775; --line:#e2e6ec; --paper:#ffffff; --panel:#f7f8fa;
+    --red:#dc2626; --amber:#d97706; --green:#16a34a; --blue:#2563eb; --purple:#7c3aed; --cyan:#0891b2; --orange:#fc6d26;
+    --mono:'SF Mono','JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;
+    --sans:'Segoe UI',-apple-system,Helvetica,Arial,sans-serif;
+  }
+  html,body{ background:var(--paper); color:var(--ink); font-family:var(--sans); }
+  body{ padding:0; }
+  .sheet{ width:100%; }
+  header{ display:flex; align-items:flex-end; justify-content:space-between; border-bottom:2.5px solid var(--ink); padding-bottom:5px; margin-bottom:8px; }
+  header .title{ font-size:20px; font-weight:800; letter-spacing:-0.01em; }
+  header .title .g{ color:var(--red); } header .title .l{ color:var(--orange); }
+  header .sub{ font-size:9px; color:var(--muted); margin-top:2px; }
+  header .brand{ text-align:right; font-size:8.5px; color:var(--muted); line-height:1.35; }
+  header .brand b{ color:var(--ink); font-size:9.5px; }
+
+  .cols{ column-count:3; column-gap:9px; }
+  .card{ break-inside:avoid; border:1px solid var(--line); border-radius:7px; overflow:hidden; margin-bottom:8px; background:var(--paper); }
+  .card h2{ font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.07em; color:#fff; padding:4px 8px; display:flex; align-items:center; gap:5px; }
+  .card .body{ padding:5px 8px 6px; }
+  .h-red h2{background:var(--red);} .h-amber h2{background:var(--amber);} .h-green h2{background:var(--green);}
+  .h-blue h2{background:var(--blue);} .h-purple h2{background:var(--purple);} .h-cyan h2{background:var(--cyan);} .h-orange h2{background:var(--orange);} .h-slate h2{background:#475569;}
+
+  .row{ display:grid; grid-template-columns:1fr; gap:0; padding:2.5px 0; border-bottom:1px dotted var(--line); }
+  .row:last-child{ border-bottom:0; }
+  code{ font-family:var(--mono); font-size:9.5px; color:var(--ink); font-weight:600; white-space:nowrap; }
+  code .o{ color:var(--muted); font-weight:500; } /* args/placeholders */
+  .desc{ font-size:8.3px; color:var(--muted); line-height:1.3; margin-top:1px; }
+  .steps{ counter-reset:s; }
+  .step{ display:flex; gap:5px; padding:2px 0; font-size:8.6px; color:var(--ink); align-items:baseline; }
+  .step::before{ counter-increment:s; content:counter(s); flex:0 0 auto; width:13px; height:13px; border-radius:50%; background:var(--cyan); color:#fff; font-size:7.5px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; font-family:var(--mono); }
+  .step code{ font-size:8.8px; }
+  .note{ font-size:8px; color:var(--muted); margin-top:3px; font-style:italic; }
+  .zones{ display:flex; align-items:center; gap:3px; flex-wrap:wrap; font-size:8px; color:var(--muted); }
+  .zone{ border:1px solid var(--line); border-radius:4px; padding:2px 5px; font-weight:700; color:var(--ink); font-size:8px; }
+  .arr{ color:var(--muted); font-family:var(--mono); font-size:8px; }
+  .arr b{ color:var(--ink); }
+  footer{ margin-top:5px; border-top:1px solid var(--line); padding-top:5px; display:flex; justify-content:space-between; align-items:center; font-size:8px; color:var(--muted); }
+  footer .rules{ display:flex; gap:10px; flex-wrap:wrap; }
+  footer .rules b{ color:var(--ink); }
+  .kbd{ font-family:var(--mono); background:var(--panel); border:1px solid var(--line); border-radius:3px; padding:0 3px; font-size:8px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <div>
+      <div class="title"><span class="g">Git</span> &amp; <span class="l">GitLab</span> — Cheat Sheet</div>
+      <div class="sub">1-Day Refresher Workshop · everything from today on one page</div>
+    </div>
+    <div class="brand">
+      <b>SUK Selangor</b><br>
+      Facilitator: Syafiyullah Yahya<br>
+      github.com/syafi-dev · git.selangor.gov.my
+    </div>
+  </header>
+
+  <div class="cols">
+
+    <!-- 1 · SETUP -->
+    <div class="card h-slate">
+      <h2>◆ One-time setup</h2>
+      <div class="body">
+        <div class="row"><code>git --version</code><div class="desc">check Git is installed</div></div>
+        <div class="row"><code>git config --global user.name <span class="o">"Name"</span></code></div>
+        <div class="row"><code>git config --global user.email <span class="o">"you@…"</span></code><div class="desc">stamped on every commit</div></div>
+        <div class="row"><code>git config --global core.autocrlf true</code><div class="desc">line endings · Mac/Linux use <code>input</code></div></div>
+        <div class="row"><code>git config --global init.defaultBranch main</code></div>
+        <div class="row"><code>ssh -T git@git.selangor.gov.my</code><div class="desc">test GitLab access</div></div>
+      </div>
+    </div>
+
+    <!-- 2 · START A REPO -->
+    <div class="card h-green">
+      <h2>◆ Start a repository</h2>
+      <div class="body">
+        <div class="row"><code>git init</code><div class="desc">turn the current folder into a repo</div></div>
+        <div class="row"><code>git clone <span class="o">&lt;url&gt;</span></code><div class="desc">copy an existing repo down, history and all</div></div>
+      </div>
+    </div>
+
+    <!-- 3 · DAILY LOOP -->
+    <div class="card h-red">
+      <h2>◆ The daily loop</h2>
+      <div class="body">
+        <div class="zones" style="margin-bottom:4px">
+          <span class="zone">Working</span><span class="arr">—<b>add</b>→</span>
+          <span class="zone">Staging</span><span class="arr">—<b>commit</b>→</span>
+          <span class="zone">Local</span><span class="arr">—<b>push</b>→</span>
+          <span class="zone">GitLab</span>
+        </div>
+        <div class="row"><code>git pull</code><div class="desc">get the latest before you start</div></div>
+        <div class="row"><code>git status</code><div class="desc">what changed &amp; where it sits</div></div>
+        <div class="row"><code>git add <span class="o">&lt;file&gt;</span></code> <code style="font-weight:500">· git add .</code><div class="desc">stage one file · or everything</div></div>
+        <div class="row"><code>git commit -m <span class="o">"message"</span></code><div class="desc">save a snapshot</div></div>
+        <div class="row"><code>git push</code><div class="desc">share it to GitLab</div></div>
+      </div>
+    </div>
+
+    <!-- 4 · INSPECT -->
+    <div class="card h-cyan">
+      <h2>◆ Inspect &amp; compare</h2>
+      <div class="body">
+        <div class="row"><code>git log --oneline</code><div class="desc">history, compact</div></div>
+        <div class="row"><code>git status -s</code><div class="desc">short status</div></div>
+        <div class="row"><code>git diff</code><div class="desc">unstaged changes</div></div>
+        <div class="row"><code>git diff --staged</code><div class="desc">what's staged for commit</div></div>
+        <div class="row"><code>git show <span class="o">&lt;hash&gt;</span></code><div class="desc">one commit in full</div></div>
+      </div>
+    </div>
+
+    <!-- 5 · BRANCHING -->
+    <div class="card h-purple">
+      <h2>◆ Branching &amp; merging</h2>
+      <div class="body">
+        <div class="row"><code>git switch -c <span class="o">&lt;name&gt;</span></code><div class="desc">create a branch &amp; jump on</div></div>
+        <div class="row"><code>git switch main</code><div class="desc">move between branches</div></div>
+        <div class="row"><code>git branch</code> <code style="font-weight:500">· -d &lt;name&gt;</code><div class="desc">list · delete a merged branch</div></div>
+        <div class="row"><code>git merge <span class="o">&lt;name&gt;</span></code><div class="desc">fold a branch into current</div></div>
+        <div class="row"><code>git merge --abort</code><div class="desc">back out of a messy merge</div></div>
+        <div class="note">Name for the job: <code>feature/…</code> <code>bugfix/…</code></div>
+      </div>
+    </div>
+
+    <!-- 6 · RESOLVE A CONFLICT -->
+    <div class="card h-amber">
+      <h2>◆ Resolve a conflict</h2>
+      <div class="body steps">
+        <div class="step"><span>Pull &amp; see the flag: <code>git pull</code></span></div>
+        <div class="step"><span>Open the file, find <span class="kbd">&lt;&lt;&lt;</span> <span class="kbd">===</span> <span class="kbd">&gt;&gt;&gt;</span></span></div>
+        <div class="step"><span>Edit to the final text you want</span></div>
+        <div class="step"><span>Delete all three marker lines</span></div>
+        <div class="step"><span><code>git add &lt;file&gt;</code> then <code>git commit</code></span></div>
+        <div class="note">Stuck? <code>git merge --abort</code> rewinds. Nothing lost.</div>
+      </div>
+    </div>
+
+    <!-- 7 · UNDO & RECOVER -->
+    <div class="card h-green">
+      <h2>◆ Undo &amp; recover</h2>
+      <div class="body">
+        <div class="row"><code>git restore <span class="o">&lt;file&gt;</span></code><div class="desc">discard edits, back to last commit</div></div>
+        <div class="row"><code>git restore -s HEAD~1 <span class="o">&lt;file&gt;</span></code><div class="desc">bring back an earlier version</div></div>
+        <div class="row"><code>git restore --staged <span class="o">&lt;file&gt;</span></code><div class="desc">unstage, keep your edits</div></div>
+        <div class="row"><code>git commit --amend</code><div class="desc">fix last message (before push)</div></div>
+        <div class="row"><code>git reset --soft HEAD~1</code><div class="desc">undo last commit, keep work</div></div>
+        <div class="row"><code>git revert <span class="o">&lt;hash&gt;</span></code><div class="desc">reverse a pushed commit · team-safe</div></div>
+        <div class="row"><code>git reflog</code><div class="desc">find a "lost" commit's hash</div></div>
+        <div class="row"><code>git clean -fd</code><div class="desc">delete untracked files · no undo</div></div>
+      </div>
+    </div>
+
+    <!-- 8 · GITLAB -->
+    <div class="card h-orange">
+      <h2>◆ GitLab collaboration</h2>
+      <div class="body">
+        <div class="row"><code>git remote -v</code><div class="desc">see your remotes (origin = default)</div></div>
+        <div class="row"><code>git push -u origin <span class="o">&lt;branch&gt;</span></code><div class="desc">push a new branch, print an MR link</div></div>
+        <div class="zones" style="margin-top:4px">
+          <span class="zone">Branch</span><span class="arr">→</span><span class="zone">Push</span><span class="arr">→</span>
+          <span class="zone">Open MR</span><span class="arr">→</span><span class="zone">Review</span><span class="arr">→</span><span class="zone">Merge</span>
+        </div>
+        <div class="note">Small MRs · real description · link the issue · review kindly &amp; fast · delete merged branches.</div>
+      </div>
+    </div>
+
+    <!-- 9 · GITIGNORE -->
+    <div class="card h-slate">
+      <h2>◆ .gitignore</h2>
+      <div class="body">
+        <div class="row"><code>node_modules/  vendor/  dist/</code><div class="desc">deps &amp; build output</div></div>
+        <div class="row"><code>.env  *.key  .DS_Store</code><div class="desc">secrets &amp; OS clutter — never commit</div></div>
+        <div class="row"><code>git rm -r --cached <span class="o">&lt;path&gt;</span></code><div class="desc">stop tracking something already committed</div></div>
+        <div class="note">Leaked a secret? Rotate it — <code>.gitignore</code> won't erase past commits.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="rules">
+      <span><b>Pull</b> before you start, <b>push</b> when you pause.</span>
+      <span><b>Branch</b> for every change.</span>
+      <span>Unsure? Run <code>git status</code>.</span>
+      <span>Messy? <b>STOP</b> &amp; ask before piling on.</span>
+    </div>
+    <div>© Syafiyullah Yahya · Prepared for SUK Selangor</div>
+  </footer>
+
+</div>
+</body>
+</html>

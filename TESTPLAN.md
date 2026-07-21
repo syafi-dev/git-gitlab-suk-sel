@@ -51,6 +51,10 @@ preview-pane screenshots).
       step; single-deck build). — 2026-07-21
 - [x] Live at https://syafi-dev.github.io/git-gitlab-suk-sel/ — HTTP 200, correct
       `<title>`, assets on `/git-gitlab-suk-sel/` base, logo + icons load. — 2026-07-21
+- [x] Printable PDF cheat sheet (`public/git-gitlab-cheatsheet.pdf`, source in
+      `cheatsheet/`, rendered via Playwright) — one A4-landscape page, 9 sections;
+      served at `/git-gitlab-suk-sel/git-gitlab-cheatsheet.pdf` and linked from the
+      "Take this with you" slide. — 2026-07-21
 
 ## Content fidelity
 
