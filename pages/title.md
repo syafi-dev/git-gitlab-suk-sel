@@ -35,6 +35,6 @@ Sharpening the everyday workflow, and fixing the mistakes that trip teams up.
 - welcome everyone; this is a hands-on refresher, so a laptop with Git and GitLab access is the ticket in
 - housekeeping: four blocks across the day, each one is short recap then you run the lab yourself, then we debrief
 - questions anytime; we batch the bigger ones at each break
-- facilitator: Syafiyullah Yahya, MBOT Professional Technologist and HRD Corp Accredited Trainer
+- facilitator: Syafiyullah Yahya, HRD Corp Accredited Trainer
 - ASK: type 1 in the chat if you use Git most days, 2 if it is occasional. Sets the room.
 -->

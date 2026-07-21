@@ -5,7 +5,7 @@ titleTemplate: '%s'
 info: |
   ## Git & GitLab — 1-Day Refresher Workshop
   Prepared for Setiausaha Kerajaan Negeri Selangor (SUK).
-  Facilitator: Syafiyullah Yahya · MBOT Professional Technologist · HRD Corp Accredited Trainer.
+  Facilitator: Syafiyullah Yahya · HRD Corp Accredited Trainer.
 mdc: true
 colorSchema: dark
 routerMode: hash

@@ -21,7 +21,7 @@ Keep the cheat sheet handy, and remember: when in doubt, <code>git status</code>
   <div v-motion :initial="{ y: 18, opacity: 0 }" :enter="{ y: 0, opacity: 1, transition: { type: 'spring', stiffness: 80, delay: 1100 } }" class="flex flex-col items-center gap-2">
     <mdi-account-tie class="text-4xl opacity-45" />
     <span class="opacity-80">Syafiyullah Yahya</span>
-    <span class="text-xs opacity-55">MBOT Professional Technologist</span>
+    <span class="text-xs opacity-55">HRD Corp Accredited Trainer</span>
   </div>
   <div v-motion :initial="{ y: 18, opacity: 0 }" :enter="{ y: 0, opacity: 1, transition: { type: 'spring', stiffness: 80, delay: 1300 } }" class="flex flex-col items-center gap-2">
     <mdi-linkedin class="text-4xl opacity-45" />
