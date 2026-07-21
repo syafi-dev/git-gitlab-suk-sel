@@ -3,7 +3,10 @@ layout: default
 transition: slide-left
 ---
 
-### Before we start, a quick recall
+<div class="flex items-center gap-3 mb-1">
+  <ActivityBadge />
+  <h3 class="!m-0">Before we start, a quick recall</h3>
+</div>
 
 <p class="text-sm opacity-60 mt-1 mb-5">Turn to the person next to you. Under a minute each.</p>
 

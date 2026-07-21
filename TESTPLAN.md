@@ -9,7 +9,7 @@ preview-pane screenshots).
 ## Build & structure
 
 - [x] `pnpm install` succeeds; `pnpm build` exits 0 (671 modules). — 2026-07-21
-- [x] `slides.md` imports 44 pages via `src:`; every page file exists. — 2026-07-21
+- [x] `slides.md` imports 48 pages via `src:`; every page file exists. — 2026-07-21
 - [x] Build base is `/git-gitlab-suk-sel/`; all `dist/assets/*` reference that base. — 2026-07-21
 
 ## Rendering — both color schemes
@@ -71,5 +71,14 @@ preview-pane screenshots).
       endings (core.autocrlf) + init.defaultBranch; undo cheat sheet adds
       `git restore -s HEAD~1` (restore an earlier version) and `git clean -fd`.
       Both verified in dark + light, no footer overflow. — 2026-07-21
+- [x] VCS foundations added: vcs-intro (definition + the family: SVN, Mercurial,
+      CVS, Perforce, Bazaar; Git as the standard) and vcs-types (centralized vs
+      distributed, with DiagIcon SVG diagrams). SVG `<text>` uses inline
+      `style="font-size"` (presentation attr is overridden by a global rule).
+      Both verified, no footer overflow. — 2026-07-21
+- [x] GitLab expanded: gitlab-features (Repository/Issues/MRs/CI-CD/Boards/Wiki)
+      and gitlab-issues-ci (Issue #42 mock + pipeline build→test→deploy). — 2026-07-21
+- [x] Activity marker: `ActivityBadge` ("your turn", green) on all 8 labs (via
+      Lab.vue) and the warm-up — distinct from the red `LiveBadge`. — 2026-07-21
 - [x] Source URLs preserved: ml.my/git-gitlab-slide, pre/post questionnaires,
-      feedback form, git.selangor.gov.my practice repo. — 2026-07-21
+      git.selangor.gov.my practice repo. — 2026-07-21

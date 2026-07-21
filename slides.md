@@ -50,6 +50,14 @@ src: ./pages/what-is-git.md
 ---
 
 ---
+src: ./pages/vcs-intro.md
+---
+
+---
+src: ./pages/vcs-types.md
+---
+
+---
 src: ./pages/toolkit.md
 ---
 
@@ -134,11 +142,19 @@ src: ./pages/what-is-gitlab.md
 ---
 
 ---
+src: ./pages/gitlab-features.md
+---
+
+---
 src: ./pages/remotes-origin.md
 ---
 
 ---
 src: ./pages/merge-request-flow.md
+---
+
+---
+src: ./pages/gitlab-issues-ci.md
 ---
 
 ---

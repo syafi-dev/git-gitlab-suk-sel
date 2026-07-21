@@ -14,10 +14,11 @@ defineProps<{ n: number | string; title: string; goal?: string; caution?: string
     <div class="medallion !w-10 !h-10 bg-red-500/10 flex-shrink-0">
       <mdi-test-tube class="text-xl text-red-600 dark:text-red-400" />
     </div>
-    <div>
+    <div class="flex-1">
       <div class="text-xs font-mono font-700 tracking-widest text-red-600 dark:text-red-400">LAB {{ n }}</div>
       <h3 class="!m-0 !leading-tight !text-xl">{{ title }}</h3>
     </div>
+    <ActivityBadge class="flex-shrink-0" />
   </div>
 
   <p v-if="goal" class="goal-chip mt-0.5 mb-3">
