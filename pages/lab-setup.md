@@ -14,7 +14,7 @@ transition: slide-left
 
 <div v-click="1" class="note-row items-start">
   <mdi-source-repository class="note-ico text-blue-600 dark:text-blue-400" />
-  <p><b>One shared repo</b> · already created for you on GitLab Selangor, and you're a member.<br><a href="https://git.selangor.gov.my" target="_blank">git.selangor.gov.my</a><span class="opacity-60">/training/practice</span></p>
+  <p><b>One shared repo</b> · already created for you, and you're a member. Clone over <b>HTTPS</b> with your token.<br><a href="https://git.selangor.gov.my" target="_blank">git.selangor.gov.my</a><span class="opacity-60">/training/practice</span></p>
 </div>
 
 <div v-click="2" class="note-row items-start">

@@ -3,7 +3,7 @@ layout: default
 transition: slide-left
 ---
 
-<Lab :n="1" title="Clone → change → commit → push" prep="Shared training repo — you're a Developer · solo · fresh clone" goal="Run one full loop against the GitLab Selangor training repo." caution="Do it your way — terminal, VS Code, or Sourcetree. If push is rejected, run git pull first, then push again.">
+<Lab :n="1" title="Clone → change → commit → push" prep="Shared repo over HTTPS + token · you're a Developer · solo · fresh clone" goal="Run one full loop against the GitLab Selangor training repo." caution="Do it your way — terminal, VS Code, or Sourcetree. If push is rejected, run git pull first, then push again.">
 
 <li v-click="1" class="step-row"><span class="step-num">1</span><span>Clone the training repo from GitLab Selangor.</span></li>
 <li v-click="2" class="step-row"><span class="step-num">2</span><span>Open <code>README.md</code> and add your details (name, unit, role).</span></li>
@@ -13,7 +13,7 @@ transition: slide-left
 
 <template #terminal>
 <TermWindow title="your turn">
-<div v-click="1"><span class="text-green-400">$</span> git clone git@git.selangor.gov.my:training/practice.git</div>
+<div v-click="1" class="break-all"><span class="text-green-400">$</span> git clone https://git.selangor.gov.my/training/practice.git</div>
 <div v-click="1"><span class="text-green-400">$</span> cd practice</div>
 <div v-click="2" class="opacity-50"># ...add your details to README.md...</div>
 <div v-click="3"><span class="text-green-400">$</span> git status</div>

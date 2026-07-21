@@ -75,7 +75,8 @@
         <div class="row"><code>git config --global user.email <span class="o">"you@…"</span></code><div class="desc">stamped on every commit</div></div>
         <div class="row"><code>git config --global core.autocrlf true</code><div class="desc">line endings · Mac/Linux use <code>input</code></div></div>
         <div class="row"><code>git config --global init.defaultBranch main</code></div>
-        <div class="row"><code>ssh -T git@git.selangor.gov.my</code><div class="desc">test GitLab access</div></div>
+        <div class="row"><code>git config --global credential.helper store</code><div class="desc">remember your token after first use</div></div>
+        <div class="row"><code style="white-space:normal">GitLab &rarr; Access Tokens</code><div class="desc">SSH is off &mdash; make a <b>Personal Access Token</b> (read + write repository); use it as the password over HTTPS</div></div>
       </div>
     </div>
 
@@ -84,7 +85,7 @@
       <h2>◆ Start a repository</h2>
       <div class="body">
         <div class="row"><code>git init</code><div class="desc">turn the current folder into a repo</div></div>
-        <div class="row"><code>git clone <span class="o">&lt;url&gt;</span></code><div class="desc">copy an existing repo down, history and all</div></div>
+        <div class="row"><code>git clone <span class="o">https://…/repo.git</span></code><div class="desc">copy an existing repo down (HTTPS + token)</div></div>
       </div>
     </div>
 

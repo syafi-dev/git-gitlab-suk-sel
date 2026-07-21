@@ -38,6 +38,10 @@ src: ./pages/setup-check.md
 ---
 
 ---
+src: ./pages/gitlab-auth.md
+---
+
+---
 src: ./pages/lab-setup.md
 ---
 

@@ -37,7 +37,7 @@ transition: slide-left
   </div>
   <div class="term-print">
   <TermWindow title="git clone">
-    <div><span class="text-green-400">$</span> git clone git@git.selangor.gov.my:training/practice.git</div>
+    <div class="break-all"><span class="text-green-400">$</span> git clone https://git.selangor.gov.my/training/practice.git</div>
     <div><span class="text-green-400">$</span> cd practice</div>
     <div class="text-gray-400"># a full copy, history and all</div>
   </TermWindow>
