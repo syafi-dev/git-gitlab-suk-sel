@@ -42,7 +42,15 @@ src: ./pages/part1.md
 ---
 
 ---
+src: ./pages/history-of-git.md
+---
+
+---
 src: ./pages/what-is-git.md
+---
+
+---
+src: ./pages/toolkit.md
 ---
 
 ---
@@ -55,6 +63,10 @@ src: ./pages/everyday-cycle.md
 
 ---
 src: ./pages/commands-core.md
+---
+
+---
+src: ./pages/sourcetree.md
 ---
 
 ---

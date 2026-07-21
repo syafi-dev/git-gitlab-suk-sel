@@ -9,7 +9,7 @@ preview-pane screenshots).
 ## Build & structure
 
 - [x] `pnpm install` succeeds; `pnpm build` exits 0 (671 modules). — 2026-07-21
-- [x] `slides.md` imports 40 pages via `src:`; every page file exists. — 2026-07-21
+- [x] `slides.md` imports 43 pages via `src:`; every page file exists. — 2026-07-21
 - [x] Build base is `/git-gitlab-suk-sel/`; all `dist/assets/*` reference that base. — 2026-07-21
 
 ## Rendering — both color schemes
@@ -58,5 +58,10 @@ preview-pane screenshots).
       cheat sheet, seven habits, pre/post-assessment + feedback links. — 2026-07-21
 - [x] Enriched with Mastering concept slides: what-is-git, merge-strategies
       (fast-forward vs 3-way), what-is-gitlab (self-hosted vs SaaS). — 2026-07-21
+- [x] Fundamentals/tools added: history-of-git (ice-breaker: Linus/2005/
+      distributed), toolkit (Git CLI + VS Code + Sourcetree → GitLab Selangor),
+      sourcetree (GUI-vs-CLI split). VS Code/GitLab logos render in both schemes;
+      Lab 1 aligned to the GitLab Selangor training-repo workflow (clone → add
+      your details → commit → push, in any of the three tools). — 2026-07-21
 - [x] Source URLs preserved: ml.my/git-gitlab-slide, pre/post questionnaires,
       feedback form, git.selangor.gov.my practice repo. — 2026-07-21
