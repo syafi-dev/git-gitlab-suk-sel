@@ -225,3 +225,20 @@ html.dark .caution { color: #fbbf24; }
   font-size: 12rem; font-weight: 800; line-height: 0.9;
   opacity: 0.08; font-family: var(--slidev-code-font-family, monospace);
 }
+
+/* ==== selectable text ============================================== */
+/* Slidev disables selection on slide text (.slidev-layout div/p/h* →
+   user-select:none, specificity 0,1,1) so clicks feel like a deck. We
+   re-enable it — with !important to beat that rule — so participants can
+   highlight and copy any line themselves, in addition to the copy button.
+   (Keep the ghost numerals unselectable so they don't grab drags.) */
+.slidev-page,
+.slidev-page :not(.ghost-num):not(.part-numeral) {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+/* terminals & inline code invite selection */
+.slidev-page code,
+.slidev-page .font-mono {
+  cursor: text;
+}
