@@ -63,5 +63,9 @@ preview-pane screenshots).
       sourcetree (GUI-vs-CLI split); start-repo (git init vs git clone — how a repo begins). VS Code/GitLab logos render in both schemes;
       Lab 1 aligned to the GitLab Selangor training-repo workflow (clone → add
       your details → commit → push, in any of the three tools). — 2026-07-21
+- [x] Gaps from Mosh "Git in 1 Hour" folded in: setup-check now sets line
+      endings (core.autocrlf) + init.defaultBranch; undo cheat sheet adds
+      `git restore -s HEAD~1` (restore an earlier version) and `git clean -fd`.
+      Both verified in dark + light, no footer overflow. — 2026-07-21
 - [x] Source URLs preserved: ml.my/git-gitlab-slide, pre/post questionnaires,
       feedback form, git.selangor.gov.my practice repo. — 2026-07-21
