@@ -22,7 +22,7 @@ transition: slide-left
   </div>
   <div class="note-row items-start">
     <mdi-presentation class="note-ico text-cyan-600 dark:text-cyan-400" />
-    <p><b>Slides for today</b><br><a href="https://syafi-dev.github.io/git-gitlab-suk-sel/" target="_blank">syafi-dev.github.io/git-gitlab-suk-sel</a></p>
+    <p><b>Slides for today</b><br><a href="https://syafi-dev.github.io/git-gitlab-suk-sel/" target="_blank">https://syafi-dev.github.io/git-gitlab-suk-sel/</a></p>
   </div>
 </div>
 
