@@ -7,7 +7,7 @@ info: |
   Prepared for Setiausaha Kerajaan Negeri Selangor (SUK).
   Facilitator: Syafiyullah Yahya · HRD Corp Accredited Trainer.
 mdc: true
-colorSchema: dark
+colorSchema: all
 routerMode: hash
 download: false
 lineNumbers: false
