@@ -54,6 +54,10 @@ src: ./pages/toolkit.md
 ---
 
 ---
+src: ./pages/start-repo.md
+---
+
+---
 src: ./pages/four-places.md
 ---
 
